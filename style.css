@@ -1,0 +1,934 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sevillana&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sevillana&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sevillana&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+*{
+    padding: 0;
+    margin : 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+   
+}
+
+.nav{
+    position: sticky;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    width: 100vw;
+    height: 50px;
+}
+
+.left{
+    padding-left: 80px;
+    padding-top: 10px;
+    color: rgb(255, 255, 255);
+    font-family: "Rubik", serif;
+}
+
+.right ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+    gap: 2rem;
+    padding-right: 80px;
+    padding-top: 10px;
+    
+
+}
+
+.right li{
+    
+    list-style-type: none;
+
+}
+.right a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: "Rubik", serif;
+}
+
+/* Responsive Design */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .right ul {
+        display: none;
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .right ul.show {
+        display: flex;
+    }
+
+    .right li {
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+.homePage{ 
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    gap: 100px;
+    
+}
+
+.homeDes{
+   
+    width: 40%;
+    
+}
+
+.homeDes h1{
+    color: black;
+    font-size: 3rem;
+    
+}
+
+
+.homeDes h2 span{
+    color: brown;
+    font-size: 1.8rem;
+    
+}
+
+
+.typewriter {
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+#dynamic-text {
+    width: 18ch;  /* Set a fixed width based on the longest text */
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-align: left;
+}
+
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .homePage {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .homeDes {
+        width: 80%;
+    }
+
+    .homeDes h1 {
+        font-size: 2.5rem;
+    }
+
+    .homeDes h2 span {
+        font-size: 1.6rem;
+    }
+
+    .typewriter {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .homePage {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .homeDes {
+        width: 90%;
+    }
+
+    .homeDes h1 {
+        font-size: 2rem;
+    }
+
+    .homeDes h2 span {
+        font-size: 1.4rem;
+    }
+
+    .typewriter {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .homePage {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .homeDes {
+        width: 95%;
+    }
+
+    .homeDes h1 {
+        font-size: 1.8rem;
+    }
+
+    .homeDes h2 span {
+        font-size: 1.2rem;
+    }
+
+    .typewriter {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+
+/* Social links */
+
+.social-links {
+    margin-top: 1px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-btn i {
+    font-size: 24px;
+}
+
+/* Button Styles */
+.github {
+    background-color: #333;
+}
+.linkedin {
+    background-color: #0077B5;
+}
+.instagram {
+    background-color: #E4405F;
+}
+
+/* Hover effects */
+.social-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.photo img{
+    width: 100%; /* Make the image responsive */
+    max-width: 350px; /* Set a max width */
+    height: auto; /* Maintain aspect ratio */
+    border: 6px solid rgb(0, 0, 0);
+    border-radius: 180px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .social-btn {
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .social-btn i {
+        font-size: 20px; /* Adjust icon size */
+    }
+
+    .photo img {
+        max-width: 100%; /* Allow image to take full width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .social-btn {
+        padding: 8px 15px; /* Further adjust padding for very small screens */
+        font-size: 14px; /* Further adjust font size */
+    }
+
+    .social-btn i {
+        font-size: 18px; /* Further adjust icon size */
+    }
+}
+
+
+
+/*About Page*/
+
+.aboutPage{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(241, 239, 239, 0.897);
+    margin-top: 80px;
+}
+
+
+.aboutHeading{
+    background-color: rgb(250, 165, 8);
+    font-size: 1.5rem;
+    
+    margin-left: 250px;
+   
+    
+    width: 180px;
+    height: 70px;
+    
+    padding: 20px;
+    padding-top: 4.5px;
+    
+    
+    
+
+}
+
+
+.aboutContent{
+    background-color: black;
+    color: white;
+    width: 50%;
+    height: 70%;
+    margin-left: 350px;
+    margin-top: 10px;
+    font-size: 1.4rem;
+    padding:45px;
+    
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .aboutHeading {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .aboutContent {
+        font-size: 1.2rem; /* Adjust font size */
+        padding: 30px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutHeading {
+        font-size: 1rem; /* Further adjust font size */
+        padding: 10px; /* Further adjust padding */
+    }
+
+    .aboutContent {
+        font-size: 1rem; /* Further adjust font size */
+        padding: 20px; /* Further adjust padding */
+    }
+}
+
+
+
+/* Project Section */
+
+.projectSection{
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(29, 28, 28);
+   
+}
+.projectHeading{
+    padding-top: 20px;
+    padding-left: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.projectHeading h1{
+    color:white;
+    padding-left: 260px;
+    font-size: 3rem;
+    
+}
+
+.projectHeading h4{
+    color: white;
+    font-family: "Inter", serif;
+    font-size: 1.1rem;
+    font-weight: 2rem;
+}
+
+
+
+/* Project Card Grid */
+.project__container {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.project__card {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgb(78, 78, 78);
+    transition: transform 0.3s ease;
+}
+
+.project__card img {
+    width: 100%;
+    height: 150px;
+}
+
+.project__card__content {
+    padding: 20px;
+}
+
+.project__card__content h3 {
+    font-size: 1.5rem;
+    color: wheat;
+    margin: 0 0 10px;
+}
+
+.project__card__content p {
+    font-size: 1rem;
+    color: rgb(216, 177, 6) !important; /* Change color to yellow */
+    margin: 0;
+}
+
+
+/* GitHub Link on Hover */
+.project__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show the GitHub link when hovering */
+.project__card:hover .project__link {
+    opacity: 1;
+}
+
+/* Hover Effect */
+.project__card:hover {
+    transform: scale(1.05);
+}
+
+.projectFooter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+  .projectFooter h2{
+    font-family: "Rubik", serif;
+    color: white;
+    font-size: 1.8rem;
+   
+  }
+
+  .projectFooter span{
+    font-size: 1.8rem;
+    color: rgb(255, 166, 0);
+  }
+
+  .projectFooter a{
+    margin-top: 14px;
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 3px;
+    padding-left: 10px;
+  }
+
+  .projectFooter:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .projectHeading h1 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+
+    .project__container {
+        gap: 15px; /* Adjust gap for smaller screens */
+    }
+
+    .project__card {
+        width: 90%; /* Make cards take more width on smaller screens */
+    }
+
+    .projectFooter h2 {
+        font-size: 1.5rem; /* Adjust font size */
+    }
+
+    .projectFooter span {
+        font-size: 1.5rem; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .projectHeading h1 {
+        font-size: 1.5;
+    }
+
+    .projectHeading h4 {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+
+    .project__container {
+        gap: 10px; /* Further adjust gap for smaller screens */
+    }
+
+    .project__card {
+        width: 100%; /* Make cards take full width on very small screens */
+    }
+
+    .project__card__content h3 {
+        font-size: 1.2rem; /* Adjust card title font size */
+    }
+
+    .project__card__content p {
+        font-size: 0.9rem; /* Adjust card description font size */
+    }
+
+    .projectFooter h2 {
+        font-size: 1.2rem; /* Further adjust font size */
+    }
+
+    .projectFooter span {
+        font-size: 1.2rem; /* Further adjust font size */
+    }
+
+    .projectFooter a {
+        font-size: 1rem; /* Adjust button font size */
+        width: 80px; /* Adjust button width */
+    }
+}
+
+   
+
+
+ /* Education section */
+
+
+ .education_section{
+    background-color: rgba(241, 239, 239, 0.897);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+ }
+
+ .education_heading h1{
+    text-decoration: underline;
+    margin-top: 100px;
+    font-family: "Rubik", serif;
+    font-size: 3.5rem;
+    font-weight: 2.5rem;
+    letter-spacing: 1.5px;
+
+ }
+
+ .education_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+ }
+
+ .education_content_title h4{
+    margin-top: 30px;
+    color: rgb(117, 18, 18);
+    font-size: 1.5rem;
+
+ }
+
+ .education_content_title span{
+    color:  rgb(95, 95, 95);
+ }
+
+
+ .education_content_title span::before {
+    content: "• ";  /* Unicode for bullet */
+    color: rgb(95, 95, 95);   /* Bullet color */
+    font-size: 1.2em;
+    margin-left: 15px;
+    margin-right: 2.4px;
+  }
+
+.education_content_title h6{
+    color: black;
+    font-size: 1.2rem;
+    font-family: "Inter", serif;
+}
+  
+.education_content_info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    margin-top: 30px;
+    
+}
+
+  .education_content_info p{
+
+    color:  black;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+  }
+
+  .education_content_info span{
+    color:  rgb(70, 68, 68);
+  }
+
+.resume_link{
+    margin-top: 70px;
+    background-color:rgb(173, 18, 18);
+    width: 130px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 8rem;
+    
+    text-decoration: none;
+    border-radius: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+
+
+/* Hover effects */
+.resume_link:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .resume_link {
+        font-size: 1.2rem; /* Smaller font size for tablets */
+        padding: 8px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .resume_link {
+        font-size: 1rem; /* Smaller font size for mobile */
+        padding: 6px; /* Adjust padding */
+        width: 80%; /* Increase width for mobile */
+    }
+}
+
+
+  /* Skill Section */
+
+
+.skillSection{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.skillPage {
+    width: 700px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+.skillPage h2 {
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: "Rubik", serif;
+    text-decoration: underline;
+    font-size: 2rem;
+    padding-bottom: 30px;
+    padding-left: 240px;
+}
+
+.skillPage p{
+    color: black;
+    margin-left: 40px;
+    margin-bottom: 30px;
+}
+.skill {
+    margin: 20px 40px;
+    text-align: left;
+}
+.skill p {
+    margin: 5px 0;
+    font-weight: bold;
+    color: #333;
+}
+.progress-bar {
+    width: 100%;
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 25px;
+    position: relative;
+}
+.progress-bar div {
+    height: 100%;
+    line-height: 25px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.c { width: 85%; background: #3498db; }
+.html { width: 90%; background: #e44d26; }
+.css { width: 80%; background: #1572b6; }
+.javascript { width: 75%; background: #f7df1e; color: #333; }
+.sql { width: 70%; background: #4caf50; }
+.python { width: 65%; background: #f4c542; color: #333; }
+
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .skillPage {
+        padding: 15px; /* Reduce padding for tablets */
+    }
+
+    .skillPage h2 {
+        font-size: 1.5rem; /* Smaller font size for tablets */
+    }
+
+    .skillPage p {
+        margin: 0 20px 20px; /* Adjust margins for better spacing */
+    }
+
+    .skill {
+        margin: 15px 0; /* Adjust margin for better spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .skillPage {
+        padding: 10px; /* Further reduce padding for mobile */
+    }
+
+    .skillPage h2 {
+        font-size: 1.2rem; /* Smaller font size for mobile */
+    }
+
+    .skillPage p {
+        margin: 0 10px 15px; /* Adjust margins for better spacing */
+    }
+
+    .progress-bar {
+        height: 20px; /* Reduce height of progress bars for mobile */
+    }
+
+    .progress-bar div {
+        line-height: 20px; /* Adjust line height for mobile */
+    }
+}
+
+
+
+/* Contact Details */
+.contactSection{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(197, 189, 189);
+ 
+}
+
+.contactSection h2{
+    padding-left: 500px;
+    padding-top: 50px;
+    font-size: 3rem;
+    font-weight: 2px;
+    text-decoration: underline;
+}
+.contact-container{
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 240px;
+    gap: 100px;
+
+}
+
+
+.contactContent{
+    color: black;
+    font-size: 2rem;
+    font-weight: 2px;
+    max-width: 400px;
+   
+
+}
+
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact-card {
+    background-color: rgba(19, 18, 18, 0.301);
+    width: 400px;
+    height: 400px;
+    padding: 100pxpx;
+    border-radius: 10px;
+    
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.contact-item i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #ffeb3b;
+   
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .contactSection h2 {
+        font-size: 2rem; /* Smaller font size for tablets */
+    }
+
+    .contact-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items */
+    }
+
+    .contactContent {
+        font-size: 1.2rem; /* Smaller font size for tablets */
+    }
+
+    .contact-card {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .contactSection h2 {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .contactContent {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+
+    .contact-card {
+        max-width: 90%; /* Increase width for mobile */
+    }
+
+    a {
+        font-size: 1rem; /* Smaller font size for links on mobile */
+    }
+}
